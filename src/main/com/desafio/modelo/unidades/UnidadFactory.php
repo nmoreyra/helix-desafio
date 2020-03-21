@@ -4,7 +4,7 @@ namespace main\com\desafio;
 
 abstract class UnidadFactory
 {
-  public static function crearUnidad(string $tipo) : Unidad {
+  public static function crearUnidad(string $tipo) : ?Unidad {
     switch ($tipo) {
       case "piquero":
         return new Piquero();
@@ -16,6 +16,7 @@ abstract class UnidadFactory
         return new Caballero();
         break;
       default:
+        return null;
         break;
     }
   }
